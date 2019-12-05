@@ -1,0 +1,5 @@
+venv/
+.vscode/
+amp_gateway_django_app.egg-info/
+*.pyc
+__pycache__
