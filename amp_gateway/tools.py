@@ -308,7 +308,7 @@ class RunParameters:
 
     def item(self,Name,I):
         """ string value of input item """
-        if len(self.allItems(Name)[0])==0: return None
+        if not self.hasParameters() or len(self.allItems(Name)[0])==0: return None
         return self.allItems(Name)[0][I]
 
     def short(self,Name,I):
