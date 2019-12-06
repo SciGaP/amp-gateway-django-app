@@ -115,6 +115,8 @@ class TRecXPlotViewProvider:
     display_type = 'image'
     name = "TRecX Plot"
     test_output_file = os.path.join(BASE_DIR, "data", "spec_total")
+    # plot2d test case
+    # test_output_file = os.path.join(BASE_DIR, "data", "plot2d", "spec_total")
 
     def generate_data(self, request, experiment_output, experiment, output_file=None):
 
