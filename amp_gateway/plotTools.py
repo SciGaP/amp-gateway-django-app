@@ -61,7 +61,7 @@ class Plot:
         if Nsub<3:   nr=1
         elif Nsub<9: nr=2
         else:        nr=3
-        nc=(Nsub-1)/nr+1
+        nc=(Nsub-1)//nr+1
 
         return nr,nc
 
