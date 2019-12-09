@@ -1,0 +1,18 @@
+ Integral of Spectrum,2-photon crossection: 0.0001742, 1.192e-47
+ ***    spectra file TwoDouble-2/0000/S_Rn1/spec_total ***
+ *** added amplitude file TwoDouble-2/0000/S_Rn1.Rn2/ampl ***
+ Integral of Spectrum,2-photon crossection: 1.407e-08, 9.628e-52
+ ***    spectra file TwoDouble-2/0000/spec_total ***
+
+ *** spectra calculated from amplitude file(s), for recomputing amplitudes, specify region as -region=AXIS_NAME
+
+
+
+ ===  mutable inputs changed  ==================================================
+
+  - DEBUG:sample[1]=16
+
+ *** Description of input on file /home1/06170/ampuser/AMP_apps/tRecX/tRecX-again/tRecX.doc ***
+
+
+ ===  done - TwoDouble-2/0000/S_Rn1.Rn2/  ======================================

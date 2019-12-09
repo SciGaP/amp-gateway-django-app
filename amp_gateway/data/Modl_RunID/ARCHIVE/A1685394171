@@ -1,0 +1,17 @@
+
+-----------------------------------------------------------------
+          Welcome to the Stampede2 Supercomputer                 
+-----------------------------------------------------------------
+
+No reservation for this job
+--> Verifying valid submit host (login4)...OK
+--> Verifying valid jobname...OK
+--> Enforcing max jobs per user...OK
+--> Verifying availability of your home dir (/home1/06170/ampuser)...OK
+--> Verifying availability of your work dir (/work/06170/ampuser/stampede2)...OK
+--> Verifying availability of your scratch dir (/scratch/06170/ampuser)...OK
+--> Verifying valid ssh keys...OK
+--> Verifying access to desired queue (skx-normal)...OK
+--> Verifying job request is within current queue limits...OK
+--> Checking available allocation (TG-PHY180023)...OK
+Submitted batch job 4863470

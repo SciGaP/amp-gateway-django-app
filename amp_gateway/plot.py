@@ -21,6 +21,7 @@ column headers will be recognized and used as legend labels
 """
 
 import io
+import re
 import sys
 
 from matplotlib.figure import Figure
@@ -117,12 +118,25 @@ class TRecXPlotViewProvider:
     test_output_file = os.path.join(BASE_DIR, "data", "spec_total")
     # plot2d test case
     # test_output_file = os.path.join(BASE_DIR, "data", "plot2d", "spec_total")
+    # Modl_RunID test case
+    # test_output_file = os.path.join(BASE_DIR, "data", "Modl_RunID", "Modl_RunID")
 
     def generate_data(self, request, experiment_output, experiment, output_file=None):
 
         # files = [os.path.basename(output_file.name)]
         # flags = [f"-b={os.path.dirname(output_file.name)}/"]
-        files = [output_file.name]
+        file_name = os.path.basename(output_file.name)
+        # parse the Modl_RunID file
+        if file_name == "Modl_RunID":
+            model_runid = output_file.read().decode()
+            m = re.match(r"(\S+) (\S+)", model_runid)
+            if m is None:
+                raise Exception(f"Invalid Modl_RunID file contents: {model_runid}")
+            model, run_id = m.group(1, 2)
+            files = [os.path.join(os.path.dirname(output_file.name), 
+                     "ARCHIVE", model, run_id, "spec_total")]
+        else:
+            files = [output_file.name]
         flags = []
         dir,which=prePost(flags)
 

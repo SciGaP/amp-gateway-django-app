@@ -1,0 +1,12 @@
+
+                     File: Name                          calls   cpu(total)   cpu/call [samp]
+               main_trecx: run                               1    1.37e+03    1.37e+03
+           timePropagator: propIntern1                      60     1.3e+03        21.6
+               main_trecx: setup                             1        49.3        49.3
+               main_trecx: operator                          1        35.8        35.8
+             initialState: get                               1        14.1        14.1
+               mpiWrapper: MPI                           59776           4     6.7e-05
+     timePropagatorOutput: outWrite                       3762        3.92     0.00104
+            operatorFloor: cost                          16460       0.204    1.24e-05
+timer overhead/call (sec): 3.73e-08
+timer overhead/call (sec): 1.42e-09 (sample=1024)

@@ -1,0 +1,7 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   240  100   119  100   121    863    878 --:--:-- --:--:-- --:--:--   876100   240  100   119  100   121    860    874 --:--:-- --:--:-- --:--:--   870
+cp: cannot stat ‘TwoDouble-2/0000/spec_partial’: No such file or directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   242  100   119  100   123   1465   1514 --:--:-- --:--:-- --:--:--  1518

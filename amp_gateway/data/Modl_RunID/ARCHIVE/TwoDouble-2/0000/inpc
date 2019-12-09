@@ -1,0 +1,48 @@
+Title:
+Two-photon double ionization of Helium
+
+#define ANG 3
+#define MANG 3
+#define RI 2
+#define RC 40
+#define NE  3
+#define ORD 20
+#define ORI 10
+#define ORA 15
+
+Operator: hamiltonian=1/2<<Laplacian>>-2.<<Coulomb>>+[[eeInt6DHelium]]
+Operator: interaction=iLaserAz[t]<<D/DZ>>
+
+Laser:  shape,  I(W/cm2),  FWHM,       ePhoton
+        cos2,   1e12,     2e-15 s,      54 eV
+
+TimePropagation:  end,  print,  store, accuracy, cutEnergy, fixStep
+            7e-15 s,  2 OptCyc,  0.09,  1.e-7,      50,      0.025
+
+BasisConstraint: axes,kind
+Eta1.Eta2,Lshape[3;ANG]
+Phi1.Phi2,M=0
+
+Axis: name,nCoefficients,lower end, upper end,functions,order
+ Phi1,MANG,0.,2*pi,expIm
+ Eta1, ANG,-1,1, assocLegendre{Phi1}
+ Phi2,MANG,0.,2*pi,expIm
+ Eta2, ANG,-1,1, assocLegendre{Phi2}
+ Rn1,ORI, 0.,RI,polynomial,ORI
+ Rn1,ORD*NE,RI,RC,polynomial,ORD
+ Rn1,ORA, RC,Infty,polExp[1.]
+ Rn2,ORI, 0.,RI,polynomial,ORI
+ Rn2,ORD*NE,RI,RC,polynomial,ORD
+ Rn2,ORA, RC,Infty,polExp[1.]
+
+Absorption: kind, axis, theta, upper
+ECS,Rn1,0.3,RC
+ECS,Rn2,0.3,RC
+
+Operator: projection=(0.5<<Laplacian>>-2<<Coulomb>>):Phi1.Eta1.Rn1+(0.5<<Laplacian>>-2<<Coulomb>>):Phi2.Eta2.Rn2
+Operator: smooth=RC-5, truncate=RC
+OperatorFloorEE: lambdaMax=4
+
+Surface: points=RC
+Spectrum: radialPoints=32, plot=total, maxEnergy=1.5, symmetry12=true
+Source: turnOff=60 au
